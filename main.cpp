@@ -2,25 +2,29 @@
 #include "TeleComColorCoder.h"
 #include <assert.h>
 
-void testNumberToPair(int pairNumber,
+void testNumberToPair(int received_pairNumber,
     TeleComColorCoder::MajorColor expectedMajor,
     TeleComColorCoder::MinorColor expectedMinor)
 {
-    TeleComColorCoder::ColorPair colorPair =
-        TeleComColorCoder::GetColorFromPairNumber(pairNumber);
-    std::cout << "Got pair " << colorPair.ToString() << std::endl;
-    assert(colorPair.getMajor() == expectedMajor);
-    assert(colorPair.getMinor() == expectedMinor);
+    TeleComColorCoder::ColorPair colorPair_classobj =
+        TeleComColorCoder::Extract_Color_From_PairNumber(received_pairNumber);
+		
+    std::cout << "Got pair " << colorPair_classobj.PrintColorPairString() << std::endl;
+	
+    assert(colorPair_classobj.DeliverMajorColor() == expectedMajor);
+    assert(colorPair_classobj.DeliverMinorColor() == expectedMinor);
 }
 
 void testPairToNumber(
-    TeleComColorCoder::MajorColor major,
-    TeleComColorCoder::MinorColor minor,
+    TeleComColorCoder::MajorColor received_majorcolor,
+    TeleComColorCoder::MinorColor received_minorcolor,
     int expectedPairNumber)
 {
-    int pairNumber = TeleComColorCoder::GetPairNumberFromColor(major, minor);
-    std::cout << "Got pair number " << pairNumber << std::endl;
-    assert(pairNumber == expectedPairNumber);
+    int calculated_pairNumber = TeleComColorCoder::Extract_PairNumber_From_Color(received_majorcolor, received_minorcolor);
+	
+    std::cout << "Got pair number " << calculated_pairNumber << std::endl;
+	
+    assert(calculated_pairNumber == expectedPairNumber);
 }
 
 int main() {
