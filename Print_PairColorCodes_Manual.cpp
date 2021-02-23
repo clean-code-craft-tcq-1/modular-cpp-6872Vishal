@@ -1,5 +1,5 @@
-#include "TeleComColorCoder.h"
 #include <iostream>
+#include "TeleComColorCoder.h"
 
 #define LAST_COLORCODE  25
 #define FIRST_COLORCODE 1
