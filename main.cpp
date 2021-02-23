@@ -24,11 +24,11 @@ void testPairToNumber(
 }
 
 int main() {
-    testNumberToPair(4, TelCoColorCoder::WHITE, TelCoColorCoder::BROWN);
-    testNumberToPair(5, TelCoColorCoder::WHITE, TelCoColorCoder::SLATE);
+    testNumberToPair(4, TeleComColorCoder::WHITE, TeleComColorCoder::BROWN);
+    testNumberToPair(5, TeleComColorCoder::WHITE, TeleComColorCoder::SLATE);
 
-    testPairToNumber(TelCoColorCoder::BLACK, TelCoColorCoder::ORANGE, 12);
-    testPairToNumber(TelCoColorCoder::VIOLET, TelCoColorCoder::SLATE, 25);
+    testPairToNumber(TeleComColorCoder::BLACK, TeleComColorCoder::ORANGE, 12);
+    testPairToNumber(TeleComColorCoder::VIOLET, TeleComColorCoder::SLATE, 25);
 
     return 0;
 }
