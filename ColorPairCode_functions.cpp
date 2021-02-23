@@ -29,14 +29,17 @@ void testPairToNumber(
 	
     assert(calculated_pairNumber == expectedPairNumber);
 }
+
 void Print_PairColorCodes_Manual(void)
 {
+	
 for(int PairColorCode=FIRST_COLORCODE; PairColorCode <= LAST_COLORCODE ; PairColorCode++)
 {
 
 	TeleComColorCoder::ColorPair tmpcolorPair_classobj = TeleComColorCoder::Extract_Color_From_PairNumber(PairColorCode);
 	std::cout << PairColorCode << "\t" << tmpcolorPair_classobj.PrintColorPairString() << std::endl;
 }
+	
 }
 
 int main() {
