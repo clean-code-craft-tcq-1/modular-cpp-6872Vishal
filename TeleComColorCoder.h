@@ -16,22 +16,22 @@ namespace TeleComColorCoder
 
     class ColorPair {
         private:
-            MajorColor majorColor_;
-            MinorColor minorColor_;
+            MajorColor majorColor_pvt;
+            MinorColor minorColor_pvt;
         public:
             ColorPair(MajorColor assign_majorcolor, MinorColor assign_minorcolor):
-                majorColor_(assign_majorcolor), minorColor_(assign_minorcolor)
+                majorColor_pvt(assign_majorcolor), minorColor_pvt(assign_minorcolor)
             {}
             MajorColor DeliverMajorColor() {
-                return majorColor_;
+                return majorColor_pvt;
             }
             MinorColor DeliverMinorColor() {
-                return minorColor_;
+                return minorColor_pvt;
             }
-            std::string PrintColorPairString() {
-                std::string colorPairStr = MajorColorNames[majorColor_];
+            std::string ColorPairString() {
+                std::string colorPairStr = MajorColorNames[majorColor_pvt];
                 colorPairStr += " ";
-                colorPairStr += MinorColorNames[minorColor_];
+                colorPairStr += MinorColorNames[minorColor_pvt];
                 return colorPairStr;
             }
     };
