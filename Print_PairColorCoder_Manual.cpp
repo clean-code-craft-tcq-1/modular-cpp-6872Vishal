@@ -1,5 +1,7 @@
 #include <iostream>
 
+using namespace TeleComColorCoder
+
 #define LAST_COLORCODE  25
 #define FIRST_COLORCODE 1
 
