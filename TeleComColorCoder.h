@@ -56,6 +56,4 @@ namespace TeleComColorCoder
     {
         return major * numberOfMinorColors + minor + 1;
     }
-	
-    void Print_PairColorCodes_Manual(void);
 }
