@@ -28,7 +28,7 @@ namespace TeleComColorCoder
             MinorColor DeliverMinorColor() {
                 return minorColor_pvt;
             }
-            std::string ColorPairString() {
+            std::string DeliverColorPairString() {
                 std::string colorPairStr = MajorColorNames[majorColor_pvt];
                 colorPairStr += " ";
                 colorPairStr += MinorColorNames[minorColor_pvt];
