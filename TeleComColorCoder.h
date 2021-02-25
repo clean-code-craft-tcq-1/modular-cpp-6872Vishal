@@ -1,3 +1,6 @@
+#ifndef TeleComColorCoder_h
+#define TeleComColorCoder_h
+
 namespace TeleComColorCoder
 {
     enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
@@ -49,3 +52,4 @@ namespace TeleComColorCoder
         return major * numberOfMinorColors + minor + 1;
     }
 }
+#endif
