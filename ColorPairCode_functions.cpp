@@ -12,7 +12,7 @@ void testNumberToPair(int received_pairNumber,
     TeleComColorCoder::ColorPair colorPair_classobj =
         TeleComColorCoder::Extract_Color_From_PairNumber(received_pairNumber);
 		
-    std::cout << "Got pair " << colorPair_classobj.PrintColorPairString() << std::endl;
+    std::cout << "Got pair " << colorPair_classobj.DeliverColorPairString() << std::endl;
 	
     assert(colorPair_classobj.DeliverMajorColor() == expectedMajor);
     assert(colorPair_classobj.DeliverMinorColor() == expectedMinor);
