@@ -1,5 +1,6 @@
-#ifndef TeleComColorCoder_h
-#define TeleComColorCoder_h
+/* Define Constants */
+#define LAST_COLORCODE  25
+#define FIRST_COLORCODE 1
 
 namespace TeleComColorCoder
 {
@@ -12,7 +13,7 @@ namespace TeleComColorCoder
     int numberOfMajorColors =
         sizeof(MajorColorNames) / sizeof(MajorColorNames[0]);
     const char* MinorColorNames[] = {
-        "Blue", "Orange", "Green", "Brown", "Slate"
+	    "Blue", "Orange", "Green", "Brown", "Slate"
     };
     int numberOfMinorColors =
         sizeof(MinorColorNames) / sizeof(MinorColorNames[0]);
@@ -25,13 +26,16 @@ namespace TeleComColorCoder
             ColorPair(MajorColor assign_majorcolor, MinorColor assign_minorcolor):
                 majorColor_pvt(assign_majorcolor), minorColor_pvt(assign_minorcolor)
             {}
-            MajorColor DeliverMajorColor() {
+            MajorColor DeliverMajorColor() 
+	    {
                 return majorColor_pvt;
             }
-            MinorColor DeliverMinorColor() {
+            MinorColor DeliverMinorColor()
+	    {
                 return minorColor_pvt;
             }
-            std::string DeliverColorPairString() {
+            std::string DeliverColorPairString()
+	    {
                 std::string colorPairStr = MajorColorNames[majorColor_pvt];
                 colorPairStr += " ";
                 colorPairStr += MinorColorNames[minorColor_pvt];
@@ -39,17 +43,30 @@ namespace TeleComColorCoder
             }
     };
 
-    ColorPair Extract_Color_From_PairNumber(int pairNumber) {
+    ColorPair Extract_Color_From_PairNumber(int pairNumber) 
+    {
         int zeroBasedPairNumber = pairNumber - 1;
+	    
         MajorColor Fetch_majorColor = 
-            (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
+            		(MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
         MinorColor Fetch_minorColor =
-            (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
+           		 (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
+	    
         return ColorPair(Fetch_majorColor, Fetch_minorColor);
     }
 	
-    int Extract_PairNumber_From_Color(MajorColor major, MinorColor minor) {
+    int Extract_PairNumber_From_Color(MajorColor major, MinorColor minor) 
+    {
         return major * numberOfMinorColors + minor + 1;
     }
+
+    void Print_PairColorCodes_Manual(void)
+    {
+       for(int PairColorCode=FIRST_COLORCODE; PairColorCode <= LAST_COLORCODE ; PairColorCode++)
+	 {
+	    TeleComColorCoder::ColorPair tmpcolorPair_classobj = TeleComColorCoder::Extract_Color_From_PairNumber(PairColorCode);
+	    std::cout << PairColorCode << "\t" << tmpcolorPair_classobj.DeliverColorPairString() << std::endl;
+	 }
+    }
+	
 }
-#endif
