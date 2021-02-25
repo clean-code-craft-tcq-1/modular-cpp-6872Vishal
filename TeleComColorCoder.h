@@ -23,16 +23,14 @@ namespace TeleComColorCoder
             ColorPair(MajorColor assign_majorcolor, MinorColor assign_minorcolor):
                 majorColor_pvt(assign_majorcolor), minorColor_pvt(assign_minorcolor)
             {}
-            MajorColor DeliverMajorColor() 
-	    {
-                return majorColor_pvt;
-            }
-            MinorColor DeliverMinorColor()
-	    {
-                return minorColor_pvt;
-            }
-            std::string DeliverColorPairString()
-	    {
+            MajorColor DeliverMajorColor() {
+                return majorColor_pvt; 
+	    }
+	    
+            MinorColor DeliverMinorColor() {
+                return minorColor_pvt; 
+	    }
+            std::string DeliverColorPairString() {
                 std::string colorPairStr = MajorColorNames[majorColor_pvt];
                 colorPairStr += " ";
                 colorPairStr += MinorColorNames[minorColor_pvt];
@@ -40,8 +38,7 @@ namespace TeleComColorCoder
             }
     };
 
-    ColorPair Extract_Color_From_PairNumber(int pairNumber) 
-    {
+    ColorPair Extract_Color_From_PairNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
 	    
         MajorColor Fetch_majorColor = 
@@ -52,8 +49,7 @@ namespace TeleComColorCoder
         return ColorPair(Fetch_majorColor, Fetch_minorColor);
     }
 	
-    int Extract_PairNumber_From_Color(MajorColor major, MinorColor minor) 
-    {
+    int Extract_PairNumber_From_Color(MajorColor major, MinorColor minor) {
         return major * numberOfMinorColors + minor + 1;
     }
 }
