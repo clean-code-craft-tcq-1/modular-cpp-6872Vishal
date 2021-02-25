@@ -1,10 +1,10 @@
 #include <iostream>
 #include "TeleComColorCoder.h"
 #include <assert.h>
-
+/*
 #define LAST_COLORCODE  25
 #define FIRST_COLORCODE 1
-
+*/
 void testNumberToPair(int received_pairNumber,
     TeleComColorCoder::MajorColor expectedMajor,
     TeleComColorCoder::MinorColor expectedMinor)
@@ -29,7 +29,7 @@ void testPairToNumber(
 	
     assert(calculated_pairNumber == expectedPairNumber);
 }
-
+/*
 void Print_PairColorCodes_Manual(void)
 {
 	
@@ -41,7 +41,7 @@ for(int PairColorCode=FIRST_COLORCODE; PairColorCode <= LAST_COLORCODE ; PairCol
 }
 	
 }
-
+*/
 int main() {
     testNumberToPair(4, TeleComColorCoder::WHITE, TeleComColorCoder::BROWN);
     testNumberToPair(5, TeleComColorCoder::WHITE, TeleComColorCoder::SLATE);
