@@ -1,3 +1,4 @@
+#include <iostream>
 #include "TeleComColorCoder.h"
 
 #define LAST_COLORCODE  25
@@ -10,7 +11,7 @@ for(int PairColorCode=FIRST_COLORCODE; PairColorCode <= LAST_COLORCODE ; PairCol
 {
 
 	TeleComColorCoder::ColorPair tmpcolorPair_classobj = TeleComColorCoder::Extract_Color_From_PairNumber(PairColorCode);
-	std::cout << PairColorCode << "\t" << tmpcolorPair_classobj.PrintColorPairString() << std::endl;
+	std::cout << PairColorCode << "\t" << tmpcolorPair_classobj.DeliverColorPairString() << std::endl;
 }
 
 }
