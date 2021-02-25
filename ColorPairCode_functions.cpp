@@ -30,7 +30,7 @@ void testPairToNumber(
     assert(calculated_pairNumber == expectedPairNumber);
 }
 
-void Print_PairColorCodes_Manual(void)
+void ToPrint_Manual_PairColorCodes(void)
 {	
 for(int PairColorCode=FIRST_COLORCODE; PairColorCode <= LAST_COLORCODE ; PairColorCode++)
 {
